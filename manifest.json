@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Bind ERP - Fix Address Selection",
+  "version": "1.0.0",
+  "description": "Arregla el bug de reseteo de direcciones en modo edición de pedidos de Bind ERP",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://app.bind.com.mx/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://app.bind.com.mx/Sales/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
